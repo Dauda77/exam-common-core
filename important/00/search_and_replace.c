@@ -2,25 +2,16 @@
 
 int main(int ac, char **av)
 {
-    if (ac == 4)
+    if (ac == 4 && av[2][1] == '\0' && av[3][1] == '\0')
     {
-        if (av[2][1] == '\0' && av[3][1] == '\0')
-        {
-            char *str = av[1];
-            char tgt = av[2][0];
-            char rpc = av[3][0];
-
-            while (*str)
+        while(*av[1])
             {
-                char c = *str;
-                if (c == tgt)
-                {
-                    c = rpc;
-                }
-                write(1, &c, 1);
-                str++;
+                if (*av[2] == *av[1])
+                    write(1, av[3], 1);
+                else
+                    write(1, av[1], 1);
+                av[1];
             }
-        }
     }
     write(1, "\n", 1);
     
