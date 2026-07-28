@@ -2,19 +2,14 @@
 
 int	main(int ac, char **av)
 {
-
-	char *tmp;
-	
 	if (ac == 3)
 	{
-		tmp = av[1];
+		char *tmp = av[1];
+
 		while (*tmp && *av[2])
 		{
-			while (*tmp == *av[2] && (*tmp && *av[2]))
-			{
+			if (*tmp == *av[2])
 				tmp++;
-				av[2]++;
-			}
 			av[2]++;
 		}
 		if (!(*tmp))
